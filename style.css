@@ -226,7 +226,11 @@ color:rgb(167, 158, 158);
     font-size: 20px;
     cursor: pointer;
   }
-  
+  .say-hello-btn a{
+    color:white;
+    text-decoration: none;
+  }
+
   .ending-description{
     display: flex;
     justify-content: space-between;
@@ -814,6 +818,38 @@ background-color:rgb(8, 108, 8,.5);
 }
 .message-input button:focus{
 background-color: rgb(3, 72, 3);
+
+}
+.create-blog{
+  margin-left: 200px;
+  padding:15px;
+  background-color:#000030;
+  border-radius: 3px;
+}
+.create-blog a{
+  text-decoration:none;
+  width:100%;
+  color:#fff;
+  font-size:medium;
+}
+.dashboard-comments .comment-display{
+  top: 150px;
+  display: block;
+  }
+  
+  
+  .dashboard-comments{
+    /* display: none; */
+    position:absolute;
+   top:0px;
+    }
+.dashboard-comments button{
+  background: red;
+  color:#fff;
+  padding: 3px 10px 3px 10px;
+  font-size: 15px;
+  border:none;
+  margin-top: 5px;
 }
 
 
@@ -1376,8 +1412,45 @@ margin-right: 4px;
      font-size: small;
       
       }
-      
+      .create-blog{
+        margin-left: 100px;
+        padding:13px;
+        background-color:#000030;
+        border-radius: 3px;
+      }
+      .create-blog a{
+        text-decoration:none;
+        width:100%;
+        color:#fff;
+        font-size: small;
+      } 
+      .dashboard-comments .comment-display{
+        top: 150px;
+        display: block;
+        width:90%;
+
+        }
+        .dashboard-comments{
+          width:100%;
+        }
+      .dashboard-comments button{
+        background: red;
+        color:#fff;
+        padding: 3px 10px 3px 10px;
+        font-size: 15px;
+        border:none;
+        margin-top: 5px;
+      }  
 }
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:900px) and (min-width:501px){
   .menu{
     display: block;
@@ -1825,4 +1898,33 @@ margin-left: 0px;
 color:rgb(49, 47, 47);
 font-size:small;
 }
+ .create-blog{
+        margin-left: 100px;
+        padding:13px;
+        background-color:#000030;
+        border-radius: 3px;
+      }
+      .create-blog a{
+        text-decoration:none;
+        width:100%;
+        color:#fff;
+        font-size: small;
+      } 
+      .dashboard-comments .comment-display{
+        top: 150px;
+        display: block;
+        width:90%;
+
+        }
+        .dashboard-comments{
+          width:100%;
+        }
+      .dashboard-comments button{
+        background: red;
+        color:#fff;
+        padding: 3px 10px 3px 10px;
+        font-size: 15px;
+        border:none;
+        margin-top: 5px;
+      }  
 }
