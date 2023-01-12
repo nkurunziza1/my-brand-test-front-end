@@ -1225,10 +1225,11 @@ margin-right: 4px;
     margin-top: 10px;
     margin-left: 0px;
     }
+   
     .login-page{
       display: block;
       width: 80%;
-      height: 500px;
+      height: 300px;
       margin-left: 25px;
       margin-top: 20px;
       padding-left: 10px;
@@ -1248,10 +1249,10 @@ margin-right: 4px;
   display: block;
  }
  .signup-form form button{
-   width: 100%;
+   width: 50%;
    }
    .signup-form form input{
-     width: 100%;
+     width: 70%;
      } 
      .skills-icon{
       width: 100%;
