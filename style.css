@@ -50,13 +50,13 @@
     text-decoration: none;
     color: #000030;
   }
-  .menu ul li.active a{
+  /* .menu ul li.active a{
     color: white;
     padding: 10px 20px 10px 15px; 
     background-color:  #000030;
     border-radius: 4px;
     width: 100%;
-  }
+  } */
   .menu ul li:hover{
     background-color:  #000030;
     color: white;
@@ -187,13 +187,13 @@
     width: 600px;
     border-radius: 5px;
     padding: 10px;
-    background:#020224;
+    background:rgba(6, 0, 0, 0.911);
     display: none;
     
   }
   .comment-message{
-  background:#fff;
-  color:rgb(39, 34, 34);
+  background:rgb(34, 31, 31);
+  color:rgb(188, 181, 181);
   padding:10px;
   display: block;
   margin-top: 10px;
@@ -595,6 +595,9 @@ cursor: pointer;
     .upload-img input{
       
     }
+    .admin-form{
+      margin-left:50px;
+    }
     .admin-form input{
       padding: 10px;
       margin-top: 5px;
@@ -602,6 +605,7 @@ cursor: pointer;
       border: 1px solid #000030;
       border-radius: 3px;
       width: 300px;
+     
       
     }
     .admin-open{
@@ -701,7 +705,7 @@ cursor: pointer;
   .admin-discript{
    display: flex;
    justify-content: space-between; 
-   align-items: center;
+   align-items: baseline;
   }
   .admin-content a{
    color: white;
@@ -873,6 +877,72 @@ background-color: rgb(3, 72, 3);
   border-color:green;
 }
 
+.single-blog{
+margin-left: 100px; 
+width: 80%;
+margin-top: 60px; 
+}
+.single-blog img{
+  border-radius: 3px;
+  width: 60%;
+  height: 500px;
+ margin-bottom: 10px;
+}
+.single-blog p{
+line-height: 40px;
+line-break: normal;
+color:black;
+margin-bottom: 140px;
+font-style: italic;
+}
+.single-blog h1{
+  margin-bottom: 10px;
+  
+}
+
+.all-bottom-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b2b60;
+  background-position: 500px;
+  padding: 10px;
+}
+.bottom-menu{
+color:wheat;
+margin-left: 100px;
+padding-top: 20px;
+}
+.bottom-menu a{
+  color:wheat;
+  display: grid;
+  grid-template-columns: repeat(2, 20px);
+  text-decoration: underline;
+  }
+  .bottom-menu ul{
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-gap: 30px;
+    }
+    .bottom-menu li{
+     list-style: circle;
+      }
+.bottom-icon{
+margin-right: 100px;
+}
+.bottom-icon img{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  
+}
+.bottom-icon img:hover{
+  transform: scaleY(120%);
+ cursor: pointer;
+}
+
+
 
 
 
@@ -918,6 +988,7 @@ background-color: rgb(3, 72, 3);
   display: flex;
   justify-content: space-between; 
   align-items: center;
+  width:100%;
 }
 .menu ul{
   display: block;
@@ -938,11 +1009,10 @@ background-color: rgb(3, 72, 3);
 }
 
 .open{
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
-  
-  }
+  display:flex;
+  justify-content: space-between;
+  margin-right: 20px;
+   }
 .introduce{
   display: block;
   align-items: center; 
@@ -1367,21 +1437,24 @@ margin-right: 4px;
         width: 90%;
         border: none;
       }
+     
       .admin-form input{
-        padding:3px 10px 3px 10px;
-        width: 100%;
+        padding:5px 5px 5px 5px;
+        width: 80%;
+        
       }
       .admin-form textarea{
         margin-top: 5px;
-        padding: 5px 10px 5px 10px;
-        width: 100%;
+        padding: 15px 10px 15px 10px;
+        width: 90%;
+       
       }
       .admin-discript p{
         margin-left: 45px;
         font-size: 25px;
       }
       .admin-discript{
-        width: 90%;
+        width: 60;
       }
       .admin-discript img{
         display: block;
@@ -1408,22 +1481,27 @@ margin-right: 4px;
         width: 50%;
 
       }
+
       .admin-content{
         position: absolute;
-        background-color: #000030;
-        color: white;
-        height: 500px;
-        margin-top: 20px;
-        padding: 5px;
-        border-radius: 0px 3px 0px 0px ;
-        border-right:1px solid #fff;
-        display: none;
-        font-size: small;
+        left:-200px;
+        top:30px;
+        transition: all 0.3s ease-out;
+        height:230;
+        
+      }
+      .admin-content.focus{
+        display: block;
+        position: absolute;
+        left: 0;
+        /* width: 50%; */
+        top: 30px;
+        height: 100;
       }
       .admin-content a{
        color: white;
        font-size: 15px;
-       margin-top: 10px;
+       margin-top: 0px;
       }
       .admin-cover{
       width: 100%;
@@ -1542,7 +1620,37 @@ margin-right: 4px;
         font-size: 15px;
         border:none;
         margin-top: 5px;
-      }  
+      } 
+      .single-blog{
+        margin-left: 25px; 
+        width: 80%;
+        margin-top: 60px;
+        font-size: 18px; 
+        }
+        .single-blog img{
+          border-radius: 3px;
+          width: 80%;
+          height: 300px;
+         margin-bottom: 10px;
+
+        }
+        .all-bottom-content{
+          display: block;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #2b2b60;
+          background-position: 500px;
+          padding: 10px;
+        }
+        .bottom-menu{
+          color:wheat;
+          margin-left: 25px;
+          padding-top: 20px;
+          } 
+          .bottom-icon{
+            margin-top: 10px;
+            margin-left:90px;
+          } 
 }
 
 
@@ -1590,6 +1698,7 @@ border-radius: 0px 0px 4px 0px;
 display: flex;
 justify-content: space-between; 
 align-items: center;
+width:95%;
 }
 .menu ul{
 display: block;
@@ -1609,10 +1718,9 @@ color: #fff;
 }
    
    .open{
-   display: flex;
-   justify-content: space-around;
-   width: 50%;
-   
+  display:flex;
+  justify-content: space-between;
+  margin-right: 10px;
    }
    .introduce{
      display: block;
@@ -1935,20 +2043,22 @@ display:block;
   border: none;
 }
 .admin-form input{
-  padding:3px 10px 3px 10px;
-  width: 100%;
+  padding:5px 5px 5px 5px;
+  width: 50%;
+  
 }
 .admin-form textarea{
   margin-top: 5px;
-  padding: 5px 10px 5px 10px;
-  width: 100%;
+  padding: 25px 10px 25px 10px;
+  width: 70%;
+
 }
 .admin-discript p{
   margin-left: 45px;
   font-size: 25px;
 }
 .admin-discript{
-  width: 90%;
+  width: 60;
 }
 .admin-discript img{
   display: block;
@@ -1960,14 +2070,20 @@ padding: 10px;
 background-color: #000030;
 color: #fff;
 border-radius: 3px;
-font-size: 15px;
+font-size: 20px;
 margin-top: 10px;
 
 }
+.upload-img input{
+  padding: 10px;  
+  margin-top: 10px;
+  font-size:20px;
+  
+  }
 .admin-submit-button{
   padding: 7px 3px 7px 3px;
-  font-size: 15px;
-  width: 50%;
+  font-size: 25px;
+  width: 30%;
 }
 .admin-content{
   position: absolute;
@@ -2144,5 +2260,18 @@ font-size:small;
         font-size: 15px;
         border:none;
         margin-top: 5px;
-      }  
+      } 
+      .single-blog{
+        margin-left: 25px; 
+        width: 80%;
+        margin-top: 60px;
+        font-size: 20px; 
+        }
+        .single-blog img{
+          border-radius: 3px;
+          width: 80%;
+          height: 500px;
+         margin-bottom: 10px;
+
+        } 
 }

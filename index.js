@@ -1,10 +1,15 @@
 let openMenu = document.getElementById('open')
-
+let adminOpen = document.getElementById('admin-open')
+let adminMenu = document.getElementById('admin-content')
 let menu = document.getElementById('menu') 
 
-openMenu.addEventListener('click', () =>{
- menu.classList.toggle('active')
-})
+openMenu.addEventListener('click',displayMenu)
+function displayMenu(e){
+    menu.classList.toggle('active')
+}
+
+
+
 function signup(){
     var signupEmail = document.getElementById('email').value;
     var signupPassword = document.getElementById('password').value;
