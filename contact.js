@@ -55,7 +55,7 @@ console.log(false)
  contactNameInput.style.borderColor = 'black';
  contactEmailInput.style.borderColor = 'black';
  contactEmailInput.value = "";
- contactNameInput.value= "";
+//  contactNameInput.value= "";
  contactTextareaInput.value = "" ;
  
  let localStoreValue = localStorage.setItem('storeValue', JSON.stringify(storage)) 
