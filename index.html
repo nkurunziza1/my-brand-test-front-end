@@ -7,6 +7,7 @@
     <title>My Brand</title>
 
    <link rel="stylesheet" href="style.css">
+   <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   
@@ -14,9 +15,9 @@
         <div class="logo"><span class="N">N</span><span class="A">A</span>classicDev</div>
         <div class="open"><img src="/imge&icon/open-menu.png" alt="" id="open"></div>
          <div class="menu"  id="menu">
-            <ul>
-              <li class="active"><a href="index.html" >Home</a></li> 
-              <li><a href="about.html">About</a></li> 
+            <ul class="unOrdered-list">
+              <li><a href="index.html" class="passive">Home</a></li> 
+              <li><a href="about.html" >About</a></li> 
               <li><a href="skill.html">Skills</a></li> 
               <li><a href="portifolio.html">Portifolio</a></li> 
               <li><a href="blog.html">Blog</a></li>
@@ -50,7 +51,7 @@
      <div class="main-articles" >
        <div class="classic" style="width: 300px;">
         <a href="alborton.html">Alborton Class</a>
-        <img src="imge&icon/figma imge.jpg" alt=""style=" border-radius:10px;">
+        <img src="imge&icon/alberton classes.jpg" alt=""style=" border-radius:10px;">
         <p>You want to became professional in
          designing look on classic design</p>
 
@@ -68,7 +69,7 @@
      </div>
       <div class="music-portifolio" style="width: 300px;">
         <a   href="ecammerceblog.html">Build E-commerce</a>
-        <img src="/imge&icon/music.jpg" alt="" style="border-radius: 10px;">
+        <img src="/imge&icon/e-commerce.jpg" alt="" style="border-radius: 10px;">
         <p>You can get all new music</p>
         <p>you want by going to this portifolio</p>
        
@@ -85,7 +86,7 @@
       </div>
       <div class="join-schools" style="width: 300px;">
       <a   href="Footballblog.html">FootBall Trends</a>
-        <img src="/imge&icon/w3 school.jpg" alt="" style="border-radius: 10px;">
+        <img src="/imge&icon/football.jpg" alt="" style="border-radius: 10px;">
         <p>Perfect website where you can </p>
         <p>start a carreer of pragramming</p>
        
@@ -103,9 +104,10 @@
       </div>
     </div>
      <div class="display-comment" id="display-comment">
+      <button class="remove-comment-btn" id="remove-comment-btn" >X</button>
      <div class="comment-block">
      <textarea name="" id="comment-textarea" placeholder="Type your comment here"></textarea>
-     <button>Send</button>
+     <button id="send-comment-btn">Send</button>
      </div>
     </div>
       <div class="comment-display">
@@ -151,5 +153,9 @@
 </div>
 </div>
 <script src="index.js"></script>
+<script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+<script>
+  let editor = new FroalaEditor('#comment-textarea')
+</script>
 </body>
 </html>

@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Brand</title>
     <link rel="stylesheet" href="style.css">
+    <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    
 </head>
 <body>
     <div class="admin-log">
      <img src="/imge&icon/admin-logo.png" alt="">
      <h1 style="color: rgb(223, 222, 220);">DASHBOARD</h1>
-     <h1>Blog</h1>
     </div>
     <div class="admin-content" id="admin-content">
         <div class="content">
@@ -27,20 +28,25 @@
     </div>  
     <div class="admin-panel">
         <div class="admin-form">
-        <form action="">
+        <form action="#">
         <label for="">Blog Title</label> 
-        <input type="text"> 
+        <input type="text" id="blog-titleInput"> 
         <label for="">Blog Content</label>
-        <textarea name=""></textarea>  
+        <textarea id="content" name="" ></textarea>  
         </form>
         </div>
     <div class="upload-img">
-      <input type="file" name="" id=""> <br>
-      <button>Upload Image+</button>
+      <input type="file" name="" id="blog-imageChoose-input"><br>
+      <button id="blog-upload-btn">Upload Image+</button>
     </div>
-    <button class="admin-submit-button">Submit</button>
+    <button class="admin-submit-button" id="admin-submit-button">Submit</button>
     </div>  
 </div>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->
+<script src="admin.js"></script>
+<script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+ <script>
+ let editor = new FroalaEditor('#content');
+</script> 
 </body>
 </html>

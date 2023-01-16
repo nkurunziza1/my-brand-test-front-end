@@ -1,50 +1,81 @@
+
+// on making sidebar menu
+
 let openMenu = document.getElementById('open')
-let adminOpen = document.getElementById('admin-open')
-let adminMenu = document.getElementById('admin-content')
 let menu = document.getElementById('menu') 
 
-openMenu.addEventListener('click',displayMenu)
-function displayMenu(e){
-    menu.classList.toggle('active')
+openMenu.addEventListener('click',function(){
+    menu.classList.toggle('active')  
+})
+
+
+
+let showCommentBtn = document.getElementById('comment-btn')
+let displayComment = document.getElementById('display-comment')
+
+
+
+showCommentBtn.addEventListener('click',()=>{
+displayComment.style.display = "block";
+})
+let commentTextarea = document.getElementById('comment-textarea')
+let sendCommentBtn = document.getElementById('send-comment-btn')
+
+sendCommentBtn.addEventListener('click',()=>{
+ 
+   let commentTextareaValue = commentTextarea.value;
+if(commentTextareaValue ===''){
+    console.log('fill the space')
+
+}else{
+
+ console.log(commentTextareaValue)  
+ commentTextarea.value = "" 
 }
 
 
+})
 
-function signup(){
-    var signupEmail = document.getElementById('email').value;
-    var signupPassword = document.getElementById('password').value;
-    var signupUsername = document.getElementById('username').value;
+let removeDisplaycommentBtn = document.getElementById('remove-comment-btn')
+removeDisplaycommentBtn.addEventListener('click', ()=>{
+    console.log('woow removed')
+    displayComment.style.display = 'none'
+    
+})
 
-    localStorage.setItem('signupEmail',signupEmail)
-    localStorage.setItem('signupPassword',signupPassword)
-    localStorage.setItem('signupUsername',signupUsername)
-}
+// // on blogs admin
 
-function login(e){
- var loginEmail = document.getElementById('email').value;  
- var loginPassword = document.getElementById('password').value;
- var loginUsername = document.getElementById('username').value;
 
- var getSignupEmail = localStorage.getItem('signupEmail')
- var getSignupPassword = localStorage.getItem('signupPassword')
- var getSignupUsername = localStorage.getItem('signupUsername')
- if(loginEmail === getSignupEmail){
-    if(loginPassword === getSignupPassword){
-        if(loginUsername === getSignupUsername){
-            alert('login successful')
-        }else{
-            
-            alert('invalid username')
-            
-        }
-    }else{
-        alert('invalid password')
-    }
- }else{
-    alert('invalid details')
- }
-console.log(getSignupEmail)
+// let uploadImageBtn = document.getElementById('blog-upload-btn')
+// let blogSubmitBtn = document.getElementById('admin-submit-button')
+// blogSubmitBtn.addEventListener('click' ,updateBlog)
 
-e.preventDefault()
-}
+
+// let blogImageChooseInput = document.getElementById('blog-imageChoose-input')
+// let blogTitleInput = document.getElementById('blog-titleInput')
+// let blogContent = document.getElementById('content')
+
+// function updateBlog(){
+   
+// let blogImageChooseInputValue = blogImageChooseInput.value;
+// let blogTitleInputValue= blogTitleInput.value;
+// let blogContentValue = blogContent.value; 
+
+// if(blogContentValue === '' || blogTitleInputValue === '' || blogImageChooseInputValue === ''){
+//     let blogContent = document.getElementById('content')
+//     console.log('please fill out all the space') 
+    
+// }else{
+  
+//     console.log('success')
+//     blogTitleInput.value= "";
+//     blogImageChooseInput.value = "";
+    
+// }
+
+// }
+
+
+
+
 
