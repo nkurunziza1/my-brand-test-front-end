@@ -31,7 +31,7 @@ if(signupEmailValue === ""){
     signupEmail.style.borderColor = 'red'
 }else{
    signupEmail.style.borderColor = 'black'
-   localStorage.setItem('signupEmail',signupEmailValue)
+   
 }
 if(signupPhoneValue  === ""){
     signupPhone.style.borderColor = 'red'
@@ -40,7 +40,7 @@ if(signupPhoneValue  === ""){
 }
 if(signupPasswordValue === ""){
     signupPassword.style.borderColor = 'red'
-    localStorage.setItem('signupPassword',signupPasswordValue)
+    
 }else{
     signupPassword.style.borderColor = 'black'
 }
@@ -53,6 +53,8 @@ signupUsername.style.borderColor = 'black'
 if(signupNameValue  === "" && signupEmailValue === ""){
     return;
 }else{
+    localStorage.setItem('signupEmail',signupEmailValue)
+    localStorage.setItem('signupPassword',signupPasswordValue)
     signupName.value = '';
     signupEmail.value = '';
     signupPhone.value = '';
