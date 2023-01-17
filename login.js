@@ -11,7 +11,7 @@ openMenu.addEventListener('click',function(){
 var loginEmail = document.getElementById('email');  
 var loginPassword = document.getElementById('password');
 
-
+let loginMessage = document.getElementById('login-message')
 
 function login(){
     var loginEmailValue = loginEmail.value;  
@@ -23,27 +23,51 @@ function login(){
  var getSignupEmail = localStorage.getItem('signupEmail')
  var getSignupPassword = localStorage.getItem('signupPassword')
  
- if(loginEmailValue === getSignupEmail){
-    loginEmail.style.borderColor = 'black'
+ 
+
+if(loginEmailValue === "" || loginPasswordValue ===""){
+    loginEmail.style.borderColor = 'red'
+    loginPassword.style.borderColor = 'red'
+    loginMessage.innerHTML = "**please fill all required space";
+    loginMessage.style.color = 'red'
  }else{
-    loginEmail.style.borderColor = 'red';
-
- }
- if(loginPasswordValue === getSignupPassword){
-
     loginEmail.style.borderColor = 'black'
-}else{
-    loginPassword.style.borderColor = 'red';
-    alert('invalid password')
-    
-}
-if(loginEmailValue === getSignupEmail && loginPasswordValue === getSignupPassword){
-   
-    console.log('login success')
+    loginPassword.style.borderColor = 'black' 
+    loginMessage.innerHTML = "";
+ }
+//  if(loginPasswordValue ===""){
+//     loginMessage.innerHTML = "please fill all required space";
+//     loginMessage.style.color = 'red'
+//     loginPassword.style.borderColor = 'red'
+// }else{
+//     loginPassword.style.borderColor = 'black'  
+//     loginMessage.innerHTML = "";
+// }
+
+
+if(loginEmailValue === getSignupEmail && 
+    loginPasswordValue === getSignupPassword){
+    loginMessage.innerHTML = "Login successful";
+    loginMessage.style.color='green';
     loginPassword.style.borderColor = 'green';
     loginEmail.style.borderColor = 'green';
     loginPassword.value = getSignupPassword = localStorage.getItem('signupPassword');
     loginEmail.value = getSignupEmail = localStorage.getItem('signupEmail');
+
+    setTimeout(function makeEmpty(){
+        loginPassword.value = "";
+        loginEmail.value = ""; 
+        loginMessage.innerHTML = ""; 
+        
+        loginPassword.style.borderColor = 'green';
+        loginPassword.style.borderColor = 'black';
+    },3000)
+}
+else{
+
+    loginEmail.style.borderColor = 'red'
+    loginPassword.style.borderColor = 'red'
+    alert('Invalid email or password')    
 }
 }
 // 

@@ -7,7 +7,7 @@
     <title>My Brand</title>
 
    <link rel="stylesheet" href="style.css">
-   <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+   <!-- <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" /> -->
 </head>
 <body>
   
@@ -104,10 +104,10 @@
       </div>
     </div>
      <div class="display-comment" id="display-comment">
-      <button class="remove-comment-btn" id="remove-comment-btn" >X</button>
+     
      <div class="comment-block">
-     <textarea name="" id="comment-textarea" placeholder="Type your comment here"></textarea>
-     <button id="send-comment-btn">Send</button>
+     <textarea name="" id="comment-textarea" placeholder="Type your comment here"></textarea><br>
+     <button id="send-comment-btn" class="send-comment-btn">Send</button> <button class="remove-comment-btn" id="remove-comment-btn" >Cancel</button>
      </div>
     </div>
       <div class="comment-display">
@@ -153,9 +153,6 @@
 </div>
 </div>
 <script src="index.js"></script>
-<script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
-<script>
-  let editor = new FroalaEditor('#comment-textarea')
-</script>
+<!-- <script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script> -->
 </body>
 </html>
