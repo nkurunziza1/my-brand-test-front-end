@@ -33,7 +33,8 @@ if(loginEmailValue === "" || loginPasswordValue ===""){
  }else{
     loginEmail.style.borderColor = 'black'
     loginPassword.style.borderColor = 'black' 
-    loginMessage.innerHTML = "";
+
+    loginMessage.innerHTML = "invalid password or email";
  }
 //  if(loginPasswordValue ===""){
 //     loginMessage.innerHTML = "please fill all required space";
@@ -67,7 +68,7 @@ else{
 
     loginEmail.style.borderColor = 'red'
     loginPassword.style.borderColor = 'red'
-    alert('Invalid email or password')    
+    loginMessage.innerHTML = '**Invalid email or password'    
 }
 }
 // 

@@ -60,7 +60,7 @@ contactBtn.addEventListener('click', ()=>{
         contactTextareaInput.style.borderColor = 'black';
       textareaError.innerHTML= ''; 
      }else{
-      textareaError.innerHTML ='**your phone number must be 10 digits'
+      textareaError.innerHTML ='** your email must have 10 to 300 hundred characters'
       textareaError.style.color = 'red' ;
   } 
   if(contactTextareaInputValue  ===""){

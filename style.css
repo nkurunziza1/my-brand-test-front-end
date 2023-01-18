@@ -518,6 +518,7 @@ cursor: pointer;
      margin-bottom: 4px;
     }
     .signup-content p{
+      margin-right:40px;
     word-spacing: 0.1rem;
     color: rgb(9, 0, 128,0.6);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -977,6 +978,22 @@ margin-right: 100px;
 .bottom-icon img:hover{
   transform: scaleY(120%);
  cursor: pointer;
+}
+.comment-input{
+  margin-bottom:20px;
+  font-size: 20px;
+  width: 40%;
+  padding: 20px;
+}
+.comment-submit{
+  padding: 20px;
+  width: 10%;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+.comment-submit:hover{
+  background: grey;
 }
 
 
@@ -1717,7 +1734,24 @@ margin-right: 4px;
           .bottom-icon{
             margin-top: 10px;
             margin-left:90px;
-          } 
+          }
+          .comment-input{
+            margin-bottom:20px;
+            font-size: 20px;
+            width: 50%;
+            padding: 20px;
+          }
+          .comment-submit{
+            padding: 20px;
+            width: 30%;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+          }
+          .comment-submit:hover{
+            background: grey;
+          }
+           
 }
 
 
@@ -2415,4 +2449,59 @@ font-size:20px;
              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
              width:60%;
              }
+             .comment-input{
+              margin-bottom:20px;
+              font-size: 20px;
+              width: 50%;
+              padding: 20px;
+            }
+            .comment-submit{
+              padding: 20px;
+              width: 30%;
+              font-size: 20px;
+              cursor: pointer;
+              border: none;
+            }
+            .comment-submit:hover{
+              background: grey;
+            }
+            .all-bottom-content{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: #2b2b60;
+              background-position: 500px;
+              padding: 10px;
+            }
+            .bottom-menu{
+            color:wheat;
+            margin-left: 100px;
+            padding-top: 20px;
+            margin-right: 10px;
+            }
+            .bottom-menu a{
+              color:wheat;
+              display: grid;
+              grid-template-columns: repeat(2, 20px);
+              text-decoration: underline;
+              }
+              .bottom-menu ul{
+                display: grid;
+                grid-template-columns: repeat(3, 60px);
+                grid-gap: 30px;
+                margin-right: 30px;
+                }
+                .bottom-menu li{
+                 list-style: circle;
+                  }
+            .bottom-icon{
+            margin-right: 10px;
+            }
+            .bottom-icon img{
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+            
+              
+            }
 }
