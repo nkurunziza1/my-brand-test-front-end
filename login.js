@@ -25,17 +25,7 @@ function login(){
  
  
 
-if(loginEmailValue === "" || loginPasswordValue ===""){
-    loginEmail.style.borderColor = 'red'
-    loginPassword.style.borderColor = 'red'
-    loginMessage.innerHTML = "**please fill all required space";
-    loginMessage.style.color = 'red'
- }else{
-    loginEmail.style.borderColor = 'black'
-    loginPassword.style.borderColor = 'black' 
 
-    loginMessage.innerHTML = "invalid password or email";
- }
 //  if(loginPasswordValue ===""){
 //     loginMessage.innerHTML = "please fill all required space";
 //     loginMessage.style.color = 'red'
@@ -46,7 +36,7 @@ if(loginEmailValue === "" || loginPasswordValue ===""){
 // }
 
 
-if(loginEmailValue === getSignupEmail && 
+if(loginEmailValue === getSignupEmail &&  
     loginPasswordValue === getSignupPassword){
     loginMessage.innerHTML = "Login successful";
     loginMessage.style.color='green';
@@ -66,9 +56,17 @@ if(loginEmailValue === getSignupEmail &&
 }
 else{
 
-    loginEmail.style.borderColor = 'red'
-    loginPassword.style.borderColor = 'red'
-    loginMessage.innerHTML = '**Invalid email or password'    
+    if(loginEmailValue === "" || loginPasswordValue ===""){
+        loginEmail.style.borderColor = 'red'
+        loginPassword.style.borderColor = 'red'
+        loginMessage.innerHTML = "**please fill all required space";
+        loginMessage.style.color = 'red'
+     }else{
+        loginEmail.style.borderColor = 'black'
+        loginPassword.style.borderColor = 'black' 
+    
+        loginMessage.innerHTML = "*Invalid password or email";
+     }   
 }
 }
 // 

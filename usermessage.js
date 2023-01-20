@@ -11,7 +11,9 @@
  
 //  })
 let adminOpen = document.getElementById('admin-open')
-let adminContent = document.getElementById('admin-content')   
+let adminContent = document.getElementById('admin-content') 
+let clearAllBtn = document.getElementById('clear-all')
+
 adminOpen.addEventListener('click',(e)=>{
     adminContent.classList.toggle('focus')
     e.preventDefault()   
@@ -22,18 +24,25 @@ function deleteList(id){
     console.log(getContactValue)
     const index = getContactValue.findIndex((obj) => obj.id === id)
     
-    getContactValue.splice(index, 2)
+    getContactValue.splice(index, 1)
 
     localStorage.setItem('storeValue', JSON.stringify(getContactValue))
 
     window.location.reload()
 }
- 
+
+clearAllBtn.addEventListener('click',()=>{
+    let getContactValue = JSON.parse(localStorage.getItem('storeValue'))
+    
+    localStorage.clear(getContactValue)
+
+    window.location.reload()
+
+})
 
 
 function getValue(){
     let messageTable = document.getElementById('message-table')
-    let messageDisplay = document.getElementById('admin-message-display')
     let getContactValue = JSON.parse(localStorage.getItem('storeValue'))
     
     console.log('hello')

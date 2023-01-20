@@ -135,35 +135,4 @@ usernameCheck.test(signupUsername.value) && signupUsernameValue!==""
     },3000)
     
 }
-// if(signupEmailValue === ""){
-//     signupEmail.style.borderColor = 'red'
-// }else{
-//    signupEmail.style.borderColor = 'black'
-   
-// }
-// if(signupPhoneValue  === ""){
-//     signupPhone.style.borderColor = 'red'
-// }else{
-//     signupPhone.style.borderColor = 'black'
-// }
-// if(signupPasswordValue === ""){
-//     signupPassword.style.borderColor = 'red'
-    
-// }else{
-//     signupPassword.style.borderColor = 'black'
-// }
-// if(signupUsernameValue === ""){
-//     signupUsername.style.borderColor = 'red' 
-
-// }else{
-// signupUsername.style.borderColor = 'black'
-// }
-// if(signupNameValue  === "" && signupEmailValue === ""){
-//     return;
-// }else{
-//  
-// }
-
-
-return false;
 }

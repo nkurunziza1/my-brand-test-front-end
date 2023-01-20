@@ -14,7 +14,7 @@ let  contactEmailInput = document.getElementById('contact-emailInput')
 let contactBtn = document.getElementById ('contact-btn')
 let emailCheck = /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+[.]+[a-z]{3}$/
 let nameCheck = /^[aA-zZ ]{5,20}$/;
-let textareaCheck =/^[aA-zZ ]{5,100}$/
+let textareaCheck =/^[aA-zZ ]$/
 
 let contactNameError= document.getElementById('signup-name-error')
 let contactEmailError= document.getElementById('signup-email-error')
@@ -54,25 +54,19 @@ contactBtn.addEventListener('click', ()=>{
       }else{
         contactEmailInput.style.borderColor = 'black';
       }
-  
-  
-      if(textareaCheck.test(contactTextareaInput.value ) && contactTextareaInputValue!==""){
-        contactTextareaInput.style.borderColor = 'black';
-      textareaError.innerHTML= ''; 
-     }else{
-      textareaError.innerHTML ='** your email must have 10 to 300 hundred characters'
-      textareaError.style.color = 'red' ;
-  } 
   if(contactTextareaInputValue  ===""){
     contactTextareaInput.style.borderColor = 'red';  
+    textareaError.innerHTML ='** please fill this place';
+    textareaError.style.color = 'red'
       }else{
         contactTextareaInput.style.borderColor = 'black';
+        
       }
   
       
   if(emailCheck.test(contactEmailInput.value) && contactEmailInputValue!==""&&
      nameCheck.test(contactNameInput.value) && contactNameInputValue!==""&&
-     textareaCheck.test(contactTextareaInput.value ) && contactTextareaInputValue!==""
+ contactTextareaInputValue!==""
   ){
   
     const storage = JSON.parse(localStorage.getItem('storeValue'))  || []

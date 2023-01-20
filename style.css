@@ -930,12 +930,11 @@ margin-top: 60px;
 line-height: 40px;
 line-break: normal;
 color:black;
-margin-bottom: 140px;
+margin-bottom: 40px;
 font-style: italic;
 }
 .single-blog h1{
   margin-bottom: 10px;
-  
 }
 
 .all-bottom-content{
@@ -994,6 +993,13 @@ margin-right: 100px;
 }
 .comment-submit:hover{
   background: grey;
+}
+.single-blog i img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 60px;
+  cursor:pointer;
+  background-clip: border-box;
 }
 
 
@@ -1707,7 +1713,7 @@ margin-right: 4px;
       } 
       .single-blog{
         margin-left: 25px; 
-        width: 80%;
+        width: 100%;
         margin-top: 60px;
         font-size: 18px; 
         }
@@ -1738,12 +1744,12 @@ margin-right: 4px;
           .comment-input{
             margin-bottom:20px;
             font-size: 20px;
-            width: 50%;
+            width: 40%;
             padding: 20px;
           }
           .comment-submit{
             padding: 20px;
-            width: 30%;
+            width: 25%;
             font-size: 20px;
             cursor: pointer;
             border: none;
@@ -1751,7 +1757,19 @@ margin-right: 4px;
           .comment-submit:hover{
             background: grey;
           }
-           
+          .single-blog i img{
+
+            width: 30px;
+            height: 30px;
+            margin-bottom: 100px;
+            cursor:pointer;
+            background-clip: border-box;
+          }
+          
+          .blog-middle-content{
+            width: 70%;
+          }
+            
 }
 
 
@@ -2503,5 +2521,18 @@ font-size:20px;
               cursor: pointer;
             
               
+            }
+            .comment-input{
+              margin-bottom:20px;
+              font-size: 20px;
+              width: 40%;
+              padding: 20px;
+            }
+            .comment-submit{
+              padding: 20px;
+              width: 25%;
+              font-size: 20px;
+              cursor: pointer;
+              border: none;
             }
 }
