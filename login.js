@@ -65,7 +65,7 @@ else{
         loginEmail.style.borderColor = 'black'
         loginPassword.style.borderColor = 'black' 
     
-        loginMessage.innerHTML = "*Invalid password or email";
+        loginMessage.innerHTML = "*Invalid password or email"; 
      }   
 }
 }

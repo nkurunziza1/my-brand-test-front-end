@@ -26,10 +26,11 @@ function takeBlogView(){
        <p>
        ${blogContent.blogContentValue}
        </p>
-       <i><img src="/imge&icon/heart like.png" alt=""></i>
+       <i><img src="/imge&icon/heart like.png" alt="" onclick ="like()"></i>
        <input type="text" placeholder="Leave comment here" id="comment-input" 
        class="comment-input">
-       <input type="submit" name="" value="submit" id="comment-submit" class="comment-submit">
+       <input type="submit" name="" value="submit" 
+       onclick='comment()' class="comment-submit">
        
         `
        
@@ -38,26 +39,34 @@ function takeBlogView(){
   takeBlogView()
 let commentInput = document.getElementById('comment-input')
 let commentSubmit = document.getElementById('comment-submit')
-let  comments = 1;
-commentSubmit.addEventListener('click', ()=>{
-let commentInputValue = commentInput.value; 
-    if(commentInput.value === ""){
-        commentInput.style.borderColor = 'red'  
-    }else{
 
-    
-    comments +=1
 
-getStorage.push(
-{
-commentInputValue:commentInputValue,
-comments:comments
-
-})
-console.log(getStorage.commentInputValue)
-commentInput.value === ""
-let SetStorage =localStorage.setItem('blogValues', JSON.stringify(getStorage))
-}
-})
 console.log(commentInput)
-  
+function like()  {
+    let params = (new URL(document.location)).searchParams;
+    let name = params.get('id')
+
+    let getStorage =JSON.parse(localStorage.getItem('blogValues')) ;
+// wibuke ko getStorage is an array
+let blogContent = getStorage.find(x => x.id == name) 
+blogContent.likes +=1
+
+const blogIndex = getStorage.findIndex(x => x.id == name)
+
+getStorage[blogIndex] = blogContent;
+console.log(blogContent)
+console.log(getStorage)
+localStorage.setItem('blogValues', JSON.stringify(getStorage)) 
+}
+
+
+function comment(){
+    let params = (new URL(document.location)).searchParams;
+    let name = params.get('id') 
+
+    let blogContent = getStorage.find(x => x.id == name) 
+
+    let getStorage =JSON.parse(localStorage.getItem('blogValues')) 
+
+    blogContent.comment +=1
+}

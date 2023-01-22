@@ -28,13 +28,18 @@ function takeBlogView(){
                 <!-- <img src="/imge&icon/share icon.png" alt=""> -->
             </div>
             <div class="like-share-comment-p">
-            <p><span style="color: red; margin-right: 5px;">12</span>Likes</p>
-            <p><span style="color: red; margin-right: 5px;">12</span>Comment</p>
+            <p><span style="color: red; margin-right: 5px;">${value.likes}</span>Likes</p>
+            <p><span style="color: red; margin-right: 5px;">${value.comments[commentsNumber]}</span>Comment</p>
             <!-- <p><span style="color: red; margin-right: 5px;">12</span>Share</p> -->
         </div>   
         `
+        
         blogBlock.appendChild(blogHold)
+console.log(comments[0]['commentsNumber'])
+        
     }  
+
+    // localStorage.setItem('blogValues', JSON.stringify(getBlogValue ))
   }
  
   takeBlogView()

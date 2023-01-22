@@ -70,8 +70,19 @@ async function updateBlog() {
             blogTitleInputValue: blogTitleInputValue,
             blogImageTitle: await toBase64(uploadedImage),
             blogContentValue: blogContentValue,
-            blogDate:new Date()
+            blogDate:new Date(),
+            likes:0,
+            comments:[
+                {
+                  commentsNumber:0,
+                  commentWord:[],
+
+                }
+            ]
+            
         })
+        
+        console.log(storage)
         adminBlogMessage.innerHTML = 'You already create blog'
         adminBlogMessage.style.color = 'green'
         setTimeout(function blogMessage() {
