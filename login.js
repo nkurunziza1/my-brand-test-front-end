@@ -36,8 +36,9 @@ function login(){
 // }
 
 
-if(loginEmailValue === getSignupEmail &&  
+if(loginEmailValue === getSignupEmail || 
     loginPasswordValue === getSignupPassword){
+    
     loginMessage.innerHTML = "Login successful";
     loginMessage.style.color='green';
     loginPassword.style.borderColor = 'green';
@@ -45,14 +46,18 @@ if(loginEmailValue === getSignupEmail &&
     loginPassword.value = getSignupPassword = localStorage.getItem('signupPassword');
     loginEmail.value = getSignupEmail = localStorage.getItem('signupEmail');
 
+    
+
     setTimeout(function makeEmpty(){
         loginPassword.value = "";
         loginEmail.value = ""; 
         loginMessage.innerHTML = ""; 
         
-        loginPassword.style.borderColor = 'green';
         loginPassword.style.borderColor = 'black';
-    },3000)
+        loginPassword.style.borderColor = 'black';
+    },4000)
+
+  
 }
 else{
 
@@ -66,7 +71,12 @@ else{
         loginPassword.style.borderColor = 'black' 
     
         loginMessage.innerHTML = "*Invalid password or email"; 
+        loginMessage.style.color='red'
+
+        
      }   
 }
+
+
 }
 // 

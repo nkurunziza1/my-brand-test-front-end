@@ -34,6 +34,8 @@
                 <form action="#">
                     <label for="">Blog Title</label>
                     <input type="text" id="blog-titleInput">
+                     <label for="">Blog summary</label>
+                    <input type="text" id="blog-summaryInput">
                     <label for="">Blog Content</label>
                     <textarea id="content" name=""></textarea>
                 </form>
@@ -47,9 +49,11 @@
     </div>
     <!-- <script src="index.js"></script> -->
     <script src="admin.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
-    <script>
-        let editor = new FroalaEditor('#content')
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script> 
+     <script>
+     let editor = new FroalaEditor('#content', {
+        heightMax:200
+     })
     </script>
 </body>
 

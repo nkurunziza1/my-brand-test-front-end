@@ -1,3 +1,11 @@
+let adminOpen = document.getElementById('admin-open')
+let adminContent = document.getElementById('admin-content')
+adminOpen.addEventListener('click', () => {
+    adminContent.classList.toggle('focus')
+
+})
+
+
 function deleteList(id){
     let getBlogValue = JSON.parse(localStorage.getItem('blogValues'))
     console.log(getBlogValue)
@@ -9,6 +17,20 @@ function deleteList(id){
 
     window.location.reload()
 }
+
+function editBlog(id){
+    let blogValues = JSON.parse(localStorage.getItem('blogValues'))
+    
+    const index = blogValues.findIndex((obj) => obj.id === id)
+
+    
+    blogValues[index]
+
+    localStorage.setItem('editableBlog', JSON.stringify(blogValues[index]))
+
+   window.location.href='edit.html' 
+}
+
 
 
 

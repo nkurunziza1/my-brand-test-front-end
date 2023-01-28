@@ -21,6 +21,7 @@ function takeBlogView(){
         <div class="music-img"> 
         <a href="/alborton.html?id=${value.id}">${value.blogTitleInputValue}</a>
         <img src="${value.blogImageTitle}">
+        <p>${value.blogSummary}</p>
       </div>
         <div class="like-comment-share">
                 <img src="/imge&icon/hand like.png" alt="">
@@ -29,17 +30,18 @@ function takeBlogView(){
             </div>
             <div class="like-share-comment-p">
             <p><span style="color: red; margin-right: 5px;">${value.likes}</span>Likes</p>
-            <p><span style="color: red; margin-right: 5px;">${value.comments[commentsNumber]}</span>Comment</p>
+            <p><span style="color: red; margin-right: 5px;">${value.comments}</span>Comment</p>
             <!-- <p><span style="color: red; margin-right: 5px;">12</span>Share</p> -->
         </div>   
         `
         
         blogBlock.appendChild(blogHold)
-console.log(comments[0]['commentsNumber'])
-        
+       
+  
+ 
     }  
 
-    // localStorage.setItem('blogValues', JSON.stringify(getBlogValue ))
+    localStorage.setItem('blogValues', JSON.stringify(getBlogValue ))
   }
  
   takeBlogView()

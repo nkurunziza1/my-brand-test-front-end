@@ -17,19 +17,20 @@ for(let i =0; i<3; i++){
     }else{
         let mainHOld = document.createElement('div')
         mainHOld.className = "classic";
-
+      console.log(getBlogValue[i])
         mainHOld.innerHTML =`
         
-        <a href="alborton.html?id= ${getBlogValue[i]}">${getBlogValue[i].blogTitleInputValue}</a>
+        <a href="alborton.html?id= ${getBlogValue[i].id}">${getBlogValue[i].blogTitleInputValue}</a>
         <img src="${getBlogValue[i].blogImageTitle}" alt=""">
+        <p>${getBlogValue[i].blogSummary}</p>
         <div class="like-comment-share">
             <img src="/imge&icon/hand like.png" alt="">
             <img src="/imge&icon/chat comment.png" alt="" id="comment-btn">
             <!-- <img src="/imge&icon/share icon.png" alt=""> -->
         </div>
         <div class="like-share-comment-p">
-            <p><span style="color: red; margin-right: 5px;">12</span>Likes</p>
-            <p><span style="color: red; margin-right: 5px;">12</span>Comment</p>
+            <p><span style="color: red; margin-right: 5px;">${getBlogValue[i].likes}</span>Likes</p>
+            <p><span style="color: red; margin-right: 5px;">${getBlogValue[i].comments}</span>Comment</p>
             <!-- <p><span style="color: red; margin-right: 5px;">12</span>Share</p> -->
       
        
@@ -40,6 +41,8 @@ for(let i =0; i<3; i++){
  
 }
 }
+
+
 getMainArticles()
 // mainArticles.innerHTML =`
 // <h3><a href="/alborton.html?id=${getBlogItems[0].id}">${getBlogItems[0].blogTitleInputValue}</a></h3>
