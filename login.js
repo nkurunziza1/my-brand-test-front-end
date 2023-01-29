@@ -46,8 +46,6 @@ if(loginEmailValue === getSignupEmail ||
     loginPassword.value = getSignupPassword = localStorage.getItem('signupPassword');
     loginEmail.value = getSignupEmail = localStorage.getItem('signupEmail');
 
-    
-
     setTimeout(function makeEmpty(){
         loginPassword.value = "";
         loginEmail.value = ""; 
@@ -57,7 +55,7 @@ if(loginEmailValue === getSignupEmail ||
         loginPassword.style.borderColor = 'black';
     },4000)
 
-  
+  window.location.href='/admin.html'
 }
 else{
 

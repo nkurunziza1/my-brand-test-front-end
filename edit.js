@@ -1,4 +1,4 @@
-function getEditableBlog(){
+ function getEditableBlog(){
  const editableBlog=  JSON.parse(localStorage.getItem('editableBlog'))
  document.getElementById('blog-title').value= editableBlog.blogTitleInputValue;
  document.getElementById('blog-summary').value= editableBlog.blogSummary;
@@ -22,6 +22,11 @@ function saveBlog(){
 
 
  localStorage.setItem('blogValues', JSON.stringify(blogValues)) 
+
+ document.getElementById('blog-title').value =''
+ document.getElementById('blog-summary').value =''
+// editor.html.set('')
+
 
 //     let params = (new URL(document.location)).searchParams;
 //     let name = params.get('id')

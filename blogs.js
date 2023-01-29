@@ -90,6 +90,7 @@ let nameInputValue = commentName.value
 
     blogContent.commentWords.push({
         id:blogContent.commentWords.length +1,
+        articleId:name,
         commentvalue:commentValue,
         nameValue:nameValue,
     })
@@ -117,25 +118,30 @@ let nameInputValue = commentName.value
     let name = params.get('id')
     
     let getStore =JSON.parse(localStorage.getItem('blogValues'))
-   
     let blogCont = getStore.find(x => x.id == name)
-    let commentAppend = document.getElementById('hold-comment')
-    
-    for(let valu of getStore){
-  
-      for(let val of valu.commentWords){
-       
-       let div = document.createElement('div')
-   
-       div.innerHTML = `${val.id}.<span style="color:#000090; font-size:20px;">${val.nameValue}:</span>   <span style="opacity:70%; 
-       font-family:  Geneva, Verdana, sans-serif;">${val.commentvalue}</span>`
-       commentAppend.appendChild(div)
-   
-      }    
-   }
 
-     
+    const filteredComments = blogCont.commentWords.filter(value => value.articleId === name)
+
+    let commentAppend = document.getElementById('hold-comment')
+
+
+  for(let val of filteredComments){
+    let div = document.createElement('div')
    
+        div.innerHTML = `${val.id}.<span style="color:#000090; font-size:20px;">${val.nameValue}:</span>   <span style="opacity:70%; 
+         font-family:  Geneva, Verdana, sans-serif;">${val.commentvalue}</span>`
+         commentAppend.appendChild(div)
+  }  
+    
+  //   for(let valu of getStore){
+  
+  //     for(let val of valu.commentWords){
+       
+  //      
+   
+  //     }    
+  //  }
+
     }
   
 displayComment()

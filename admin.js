@@ -92,6 +92,9 @@ async function updateBlog() {
         editor.html.set('')
 
         let storage = JSON.parse(localStorage.getItem('blogValues')) || [];
+
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get('id')
         storage.push({
             id:storage.length +1,
             blogTitleInputValue: blogTitleInputValue,
@@ -101,10 +104,7 @@ async function updateBlog() {
             blogDate: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}),
             likes:0,
             comments:0,
-            commentWords:[],
-
-            
-            
+            commentWords:[],  
         })
         
         console.log(storage)

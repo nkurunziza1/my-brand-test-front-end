@@ -6,18 +6,18 @@ adminOpen.addEventListener('click',(e)=>{
    })
 
 
-   // function deleteComment(id){
-   //    let  getStore= JSON.parse(localStorage.getItem('blogValues'))
+   function deleteComment(id){
+      let  getStore= JSON.parse(localStorage.getItem('blogValues'))
          
-   //    let index1 = getStore.findIndex((obj) => obj.id === id)
+      let index1 = getStore.commentWords.findIndex((obj) => obj.id === id)
       
-   //    getStore.splice(index1.commentWords, 1)
+      getStore.commentWords.splice(index1, 1)
   
-   //    localStorage.setItem('blogValues', JSON.stringify(getStore))
+      localStorage.setItem('blogValues', JSON.stringify(getStore))
   
-   //    window.location.reload()  
-   // }
-// display comment
+      window.location.reload()  
+   }
+
    
  function showComment(){
     let params = (new URL(document.location)).searchParams;
@@ -26,25 +26,24 @@ adminOpen.addEventListener('click',(e)=>{
     let getStore =JSON.parse(localStorage.getItem('blogValues'))
    
     let blogCont = getStore.find(x => x.id == name)
+
+    let filteredComments = getStore.commentWords.filter(value => value.articleId === name)
     let commentAppend = document.getElementById('comment-message')
     
-    
- for(let valu of getStore){
-  
-   for(let val of valu.commentWords){
-    
-    let div = document.createElement('div')
 
-    div.innerHTML = `
-    <h3>${valu.blogTitleInputValue}</h3>
-    <p>${val.commentvalue}</p>
-     <button onclick=deleteComment(${val.id})>Delete</button> 
-     
-`
- commentAppend.appendChild(div)
+  for(let valu of filteredComments) {
+   let div = document.createElement('div')
 
-   }    
-}    
+       div.innerHTML = `
+       <h3>${blogCont.blogTitleInputValue}</h3>
+       <p>${valu.commentvalue}</p>
+        <button onclick=deleteComment(${valu.id})>Delete</button> 
+        
+   `
+    commentAppend.appendChild(div)
+  } 
+    
+
 
  }
 
