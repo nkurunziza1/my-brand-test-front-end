@@ -6,7 +6,9 @@
 
   const getBlogs = async (req, res)=>{
   const blogs = await Blog.find()
-    res.status(200).json({blogs:blogs})
+  
+  res.status(200).json({blog:blogs})
+  
   }
 
   const postBlog = async (req, res) => {
@@ -24,7 +26,7 @@
    });
 
    await blog.save();
-   res.json(blog);
+   res.status(200).json(blog);
   
    }
    } catch (error) {

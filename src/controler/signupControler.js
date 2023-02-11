@@ -23,11 +23,11 @@ const postSignupValues = async (req, res) => {
     password: req.body.password,
     telephone: req.body.telephone,
     username: req.body.username,
-    userType: "admin",
   });
 
   await signupValue.save();
-  res.send(signupValue);
+  res.status(200)
+  res.json(signupValue);
 };
 
 const getSignupValue = async (req, res) => {
