@@ -4,7 +4,7 @@
     
 
     const postLoginValues = async (req, res)=>{
-        const check = true;
+        
         try{
         const userLogin = await signupSchema.findOne({email: req.body.email, password:req.body.password})
         

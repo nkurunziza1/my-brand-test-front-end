@@ -36,10 +36,13 @@ describe('GET /blogs', () => {
   it('should return 400 if title, content, or summary is missing', async () => {
     const res = await request(app)
     .post('/api/v1/blogs')
+    .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFsZXhlbmRyZS5Oa3VydW56aXphQGdtYWlsLmNvbSIsImlkIjoiNjNkZjFmMTkxZjNlYTAzZDkxYjQwNzE4IiwiaWF0IjoxNjc2MTA1NjQxLCJleHAiOjE2NzYxMjAwNDF9.iqx5UpEEoSMRym695TTchWV27gLVrhcoTiR0cOovZ84')
     .send({});
     expect(res.statusCode).toBe(400);
     expect(res.body).toEqual({ message: 'Please provide all required details' });
   });
+
+  
 
 })
 
@@ -91,7 +94,7 @@ describe("POST /signup", () => {
     expect(200);
   });
 
-  test ("it should return error")
+  
 
   });
 

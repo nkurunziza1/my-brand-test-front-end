@@ -2,7 +2,7 @@
   import { commentSchema } from "../models/comment.js"
   import { Blog } from "../models/Blog.js"
   
-  const getComments = async(req, res)=>{
+   const getComments = async(req, res)=>{
    
     const comments = await commentSchema.find().populate({path: "blog"})
     res.send(comments)

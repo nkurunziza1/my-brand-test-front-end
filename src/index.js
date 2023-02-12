@@ -51,7 +51,7 @@
 		// app.use("/api/likes", likeRouter)
 
 		app.listen(5000, () =>{
-			//  console.log("Server has started!");
+			 console.log("Server has started!");
 		});
 	})
 	

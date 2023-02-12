@@ -5,7 +5,7 @@
  
 
   const getBlogs = async (req, res)=>{
-  const blogs = await Blog.find()
+  const blogs = await Blog.find().sort({createdAt:-1})
   
   res.status(200).json({blog:blogs})
   
