@@ -1,7 +1,7 @@
 
   import passport from "passport";
   import { ExtractJwt, Strategy } from "passport-jwt"
-  import { signupSchema } from "./models/signup.js";
+  import { signupSchema } from "./models/signup.js.js";
 
  
 
