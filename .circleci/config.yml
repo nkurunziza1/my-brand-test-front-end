@@ -25,7 +25,7 @@ jobs:
       - image: node:18.13.0
     environment:
       COVERALLS_REPO_TOKEN: BwSvgcK6ACmdPjtZc2zFYw6DahiuVFlGw
-    working_directory: ~/ft-node-endpoints/learn-express
+    working_directory: ~/ft-node-endpoints
     steps:
       - checkout:
           path: ~/ft-node-endpoints
