@@ -2,7 +2,7 @@ import { signupSchema } from "../models/signup.js"
 
 const getSignupValues = async (req, res) => {
   const signupValues = await signupSchema.find();
-  res.send(signupValues);
+  res.json(signupValues);
 };
 
 const postSignupValues = async (req, res) => {
@@ -35,12 +35,12 @@ const getSignupValue = async (req, res) => {
     const signupValue = await signupSchema.findOne({ _id: req.params.id });
 
     if (signupValue){
-      res.send(signupValue);
+      res.json(signupValue);
     } else {
-      res.send("User doesn't exist");
+      res.status(200).json({message:"User doesn't exist"});
     }
   } catch {
-    res.status(404).send("User does not exist");
+    res.status(404).json({message:"User does not exist"});
   }
 };
 

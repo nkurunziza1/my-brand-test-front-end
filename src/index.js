@@ -44,7 +44,7 @@
 
 		app.use("/api/v1/blogs", blogRouter);
 	    app.use("/api/v1/messages", messageRouter);
-        app.use("/api/v1/signup", signupRouter)
+        app.use("/api/v1/users", signupRouter)
 		app.use("/api/v1/comments", commentRouter)
 		app.use("/api/v1/auth/login", loginRouter)
 		// app.use("/api/likes", likeRouter)

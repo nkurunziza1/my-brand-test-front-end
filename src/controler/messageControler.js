@@ -46,7 +46,7 @@
          } else {
          res.status(404).json({ message: "Message not found" });
          }
-         } catch (message) {
+         } catch{
          res.status(404).json({ message: "Message not found" });
          }
          }

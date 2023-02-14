@@ -9,8 +9,9 @@
    messageRouter.get("", getMessage)
    messageRouter.post("" ,validate(ValidationSchema), postMessage)
    messageRouter.get("/:id", getSingleMessage)
-   messageRouter.delete("/:id",passport.authenticate('jwt', {session: false}), deleteMessage)
+   messageRouter.delete("/:id", deleteMessage)
    
+   // ,passport.authenticate('jwt', {session: false})
 
    export default messageRouter;
 

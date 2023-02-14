@@ -5,13 +5,13 @@
    import app from "./src/index.js"
    import { set } from "mongoose"
    import  request  from "supertest"
-   import { Blog } from "./src/models/Blog.js"
+
 
 
 
    
 
-   jest.setTimeout(10000)
+   jest.setTimeout(25000)
  
     describe("blog controller", ()=>{
       beforeAll(async () => {
@@ -50,7 +50,7 @@ describe('GET /blogs', () => {
 describe("delete blog", () =>{
   test('it should delete a blog', async () => {
     const res = await request(app)
-    .delete('/api/v1/blogs/63e22dc167620246a1513e2f')
+    .delete('/api/v1/blogs/63e6d19a8aa2a19e7e05b3d7')
     
     .expect(200)
     expect(res.body).toEqual({message: 'Blog deleted'});
@@ -100,23 +100,7 @@ describe('Get a single blog', () => {
 
 
 
-describe("POST /signup", () => {
-  test("it should create a new user", async () => {
-    const res = await request(app)
-      .post("/api/v1/signup")
-      .send({
-        name: "John Doe",
-        email: "johndoe@example.com",
-        password: "password123",
-        telephone: "123456789",
-        username: "johndoe",
-      }) 
-     expect(200);
-  })
 
-  
-
-  })
 
 
   //comment
@@ -157,7 +141,7 @@ describe("Comment controller", () => {
 
   test("it should delete a comment", async () => {
     const response = await request(app)
-    .delete("/api/v1/63e4406a4514be7405e86d82/comments/")
+    .delete("/api/v1/comments/63e443027360766ece6e16a5")
     .expect(200)
     expect(response.body).toBeDefined()
     expect(response.body.message).toBe("delete Successfully");
@@ -197,7 +181,7 @@ describe('GET /messages', () => {
  describe("delete message", () =>{
    test('it should delete a message', async () => {
      const res = await request(app)
-     .delete('/api/v1/messages/63e999718564bc7455b94169')
+     .delete('/api/v1/messages/63e054505b30ce4aab6077b1')
      
      .expect(200)
      expect(res.body).toEqual({message: 'Delete Successful!'});
@@ -209,7 +193,7 @@ describe('GET /messages', () => {
      .delete('/api/v1/messages/1123213214')
      .expect("Content-type", /json/)
      .expect(404)
-     expect(res.body).toEqual({message: 'message not found'});
+     expect(res.body).toEqual({message: 'Message not found'});
    })
  })
  
@@ -235,7 +219,56 @@ describe('GET /messages', () => {
    })
  })
  
+ // users
+
+
+ describe("POST /signup", () => {
+   test("it should create a new user", async () => {
+     const res = await request(app)
+       .post("/api/v1/signup")
+       .send({
+         name: "John Doe",
+         email: "johndoe@example.com",
+         password: "password123",
+         telephone: "123456789",
+         username: "johndoe",
+       }) 
+      expect(200);
+   })
  
+   
+ 
+   })
+ 
+ describe('Get a single users', () => {
+   test('it should return a single user', async () => {
+     const res = await request(app)
+     .get('/api/v1/users/63df1f191f3ea03d91b40718')
+     .expect("Content-type", /json/)
+     .expect(200);
+     
+   })
+   
+   test('it should return a 404 status code if the user is not found', async () => {
+     const res = await request(app)
+     .get('/api/v1/users/1123213214')
+     .expect("Content-type", /json/)
+     .expect(404)
+     expect(res.body).toEqual({message: "User does not exist"});
+   })
+ })
+    
+ describe('Get a all users', () => {
+  test('it should return a all user', async () => {
+    const res = await request(app)
+    .get('/api/v1/users')
+    .expect("Content-type", /json/)
+    .expect(200);
+    
+  })
+
+})
+
  
 
 

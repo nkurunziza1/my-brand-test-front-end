@@ -9,7 +9,7 @@
     "start": "node /index.js",
     "dev": "nodemon --exec npx babel-node src/index.js",
     "lint": "eslint .",
-    "test": "jest --coverage"
+    "test": "jest --coverage  --detectOpenHandles  --forceExit"
   },
   "keywords": [],
   "author": "",
