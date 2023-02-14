@@ -167,5 +167,76 @@ describe("Comment controller", () => {
 // message
 
 
+  
+describe('GET /messages', () => {
+   it('should return an array of messages', async () => {
+     const response = await request(app)
+       .get('/api/v1/messages')
+       .expect(200)
+       .expect("Content-type", /json/)
+      
+         
+   })
+ 
+ })
+ 
+  describe("Post/messages",()=>{
+   test(' it should return 200 if name, email, and message', async () => {
+     const res = await request(app)
+     .post('/api/v1/messages')
+     //.set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFsZXhlbmRyZS5Oa3VydW56aXphQGdtYWlsLmNvbSIsImlkIjoiNjNkZjFmMTkxZjNlYTAzZDkxYjQwNzE4IiwiaWF0IjoxNjc2MTA1NjQxLCJleHAiOjE2NzYxMjAwNDF9.iqx5UpEEoSMRym695TTchWV27gLVrhcoTiR0cOovZ84')
+     .send({
+         name: "Alexandre",
+			email: "Alexandre@gmail.com",
+			message: "hello the one"
+     })
+     .expect(200)
+   })
+ })
+ 
+ describe("delete message", () =>{
+   test('it should delete a message', async () => {
+     const res = await request(app)
+     .delete('/api/v1/messages/63e999718564bc7455b94169')
+     
+     .expect(200)
+     expect(res.body).toEqual({message: 'Delete Successful!'});
+ 
+    })
+     
+   test('it should return a 404 status code if the message is not found', async () => {
+     const res = await request(app)
+     .delete('/api/v1/messages/1123213214')
+     .expect("Content-type", /json/)
+     .expect(404)
+     expect(res.body).toEqual({message: 'message not found'});
+   })
+ })
+ 
+ 
+ 
+ 
+ 
+ describe('Get a single message', () => {
+   test('it should return a single message', async () => {
+     const res = await request(app)
+     .get('/api/v1/messages/63e98b64f97128f0a621c26e')
+     .expect("Content-type", /json/)
+     .expect(200);
+     
+   })
+ 
+   test('it should return a 404 status code if the message is not found', async () => {
+     const res = await request(app)
+     .get('/api/v1/messages/1123213214')
+     .expect("Content-type", /json/)
+     .expect(404)
+     expect(res.body).toEqual({message: 'message not found'});
+   })
+ })
+ 
+ 
+ 
+
 
   })

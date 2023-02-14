@@ -3,7 +3,7 @@
    
    const  getMessage = async(req, res)=>{
    const message = await Message.find()
-	res.send(message)
+	res.json(message)
    }
 
  
@@ -15,10 +15,10 @@
 			message: req.body.message
 		})
 		await massage.save()
-		res.send(massage)
+		res.json(massage)
      }
      catch{
-     res.status(500).res.send({error: "something went wrong"})
+     res.status(500).res.json({message: "something went wrong"})
      }
 		
 	}	
@@ -27,13 +27,13 @@
       try{
       const message = await Message.findOne({ _id: req.params.id})
       if(message){
-      res.send(message)
+      res.json(message)
       }else{
-      res.status(404).send({message:"message not found"})
+      res.status(404).json({message:"message not found"})
       }
       }
-      catch(error){
-      res.status(500).send({error:"Something went wrong"})
+      catch(message){
+      res.status(404).json({message:"message not found"})
       }
       }
 	
@@ -42,12 +42,12 @@
          try {
          const deletedMessage = await Message.findOneAndDelete({ _id: req.params.id });
          if (deletedMessage) {
-         res.send({message:"Delete Successful!"});
+         res.json({message:"Delete Successful!"});
          } else {
-         res.status(404).send({ error: "Message not found" });
+         res.status(404).json({ message: "Message not found" });
          }
-         } catch (error) {
-         res.status(500).send({ error: "Internal server error" });
+         } catch (message) {
+         res.status(404).json({ message: "Message not found" });
          }
          }
 
