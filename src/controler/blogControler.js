@@ -5,7 +5,7 @@
  
 
   const getBlogs = async (req, res)=>{
-  const blogs = await Blog.find().sort({createdAt:-1})
+  const blogs = await Blog.find()
   
   res.status(200).json({blog:blogs})
   
@@ -51,10 +51,10 @@
     if (!blog) {
     res.status(404).json({message:"Post not found"});
     } else {
-    res.send(blog);
+    res.json(blog);
     }
     } catch (error) {
-    res.status(500).json({message:"something went wrong!"});
+    res.status(404).json({message:"Post not found"});
     }
     };
   
@@ -98,7 +98,7 @@
     await blog.save();
     res.json(blog);
     } catch (error) {
-    res.status(500).json({error:"Something went wrong!"});
+    res.status(404).json({message:"Blog not found!"});
     }
     }
 
@@ -112,7 +112,7 @@
     res.status(200).json({ message: "Blog deleted" });
     }
     } catch (error) {
-    res.status(400).json({error:"Something went wrong!"});
+    res.status(404).json({message:"Post not found"});
     }
     };
     

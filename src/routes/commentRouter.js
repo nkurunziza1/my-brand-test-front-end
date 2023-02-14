@@ -10,7 +10,7 @@
   
   // commentRouter.post("/:id",validate(CommentValidation), postComments)
   // commentRouter.get("/get-blog-comments/:id", getCommentsByBlog)
-  commentRouter.get("/get-comment-by-id/:id", getComment)
+  commentRouter.get("/:id", getComment)
   commentRouter.get("", getComments)
   commentRouter.delete("/:id", deletComment)
 

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20.83% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/24</span>
+                <span class='fraction'>16/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20.83% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/24</span>
+                <span class='fraction'>16/24</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -141,41 +141,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -211,51 +211,51 @@
   import { commentSchema } from "../models/comment.js"
   import { Blog } from "../models/Blog.js"
   
-   const getComments = <span class="fstat-no" title="function not covered" >as</span>ync(req, res)=&gt;{
+   const getComments = async(req, res)=&gt;{
    
-    const comments = <span class="cstat-no" title="statement not covered" >await commentSchema.find().populate({path: "blog"})</span>
-<span class="cstat-no" title="statement not covered" >    res.send(comments)</span>
+    const comments = await commentSchema.find().populate({path: "blog"})
+    res.send(comments)
 &nbsp;
    }
 &nbsp;
-   const postComments = <span class="fstat-no" title="function not covered" >as</span>ync(req, res)=&gt;{
+   const postComments = async(req, res)=&gt;{
 &nbsp;
-    const comment = <span class="cstat-no" title="statement not covered" >new commentSchema({</span>
+    const comment = new commentSchema({
       blog: req.params.id,
       name: req.body.name,
       comment: req.body.comment,  
    })
    
-<span class="cstat-no" title="statement not covered" >   await comment.save()</span>
+   await comment.save()
 &nbsp;
-<span class="cstat-no" title="statement not covered" >   return res.status(200).send(comment)</span>
+   return res.status(200).json(comment)
 &nbsp;
    }
 &nbsp;
-    const getCommentsByBlog = <span class="fstat-no" title="function not covered" >as</span>ync (req, res)=&gt;{
+    const getCommentsByBlog = async (req, res)=&gt;{
 &nbsp;
-    const comments = <span class="cstat-no" title="statement not covered" >await commentSchema.find({blog: req.params.id})</span>
+    const comments = await commentSchema.find({blog: req.params.id})
     .populate({path: "blog"})
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return res.status(200).send(comments)</span>
+    return res.status(200).json(comments)
     
    }
 &nbsp;
 &nbsp;
-   const getComment = <span class="fstat-no" title="function not covered" >as</span>ync(req, res)=&gt;{
-<span class="cstat-no" title="statement not covered" >     try{</span>
-        const comment = <span class="cstat-no" title="statement not covered" >await commentSchema.findOne({_id: req.params.id})</span>
+   const getComment = async(req, res)=&gt;{
+     try{
+        const comment = await commentSchema.findOne({_id: req.params.id})
         .populate({path: "blog"})
-<span class="cstat-no" title="statement not covered" >        if(comment){</span>
-<span class="cstat-no" title="statement not covered" >          res.send(comment)</span>
+        if(comment){
+          res.json(comment)
         }
-        else{
+        else<span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >          return res.status(404).json({message: "comment not found"})</span>
         }
         
      }
      catch{
-<span class="cstat-no" title="statement not covered" >       res.status(404).json({error:"something went wrong"}) </span>
+<span class="cstat-no" title="statement not covered" >       res.status(404).json({message:"comment not found"}) </span>
      }
    }
 &nbsp;
@@ -273,7 +273,7 @@
       } 
     }
     catch{
-<span class="cstat-no" title="statement not covered" >      res.status(500).json({error: "some thing went wrong"}) </span>
+<span class="cstat-no" title="statement not covered" >      res.status(404).json({message: "comment not found"}) </span>
     }
   }
   export {getComment, postComments, getComments,deletComment,getCommentsByBlog}
@@ -286,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-12T05:41:20.782Z
+                at 2023-02-14T05:32:04.845Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -19,7 +19,7 @@
    
    await comment.save()
 
-   return res.status(200).send(comment)
+   return res.status(200).json(comment)
 
    }
 
@@ -28,7 +28,7 @@
     const comments = await commentSchema.find({blog: req.params.id})
     .populate({path: "blog"})
 
-    return res.status(200).send(comments)
+    return res.status(200).json(comments)
     
    }
 
@@ -38,7 +38,7 @@
         const comment = await commentSchema.findOne({_id: req.params.id})
         .populate({path: "blog"})
         if(comment){
-          res.send(comment)
+          res.json(comment)
         }
         else{
           return res.status(404).json({message: "comment not found"})
@@ -46,7 +46,7 @@
         
      }
      catch{
-       res.status(404).json({error:"something went wrong"}) 
+       res.status(404).json({message:"comment not found"}) 
      }
    }
 
@@ -64,7 +64,7 @@
       } 
     }
     catch{
-      res.status(500).json({error: "some thing went wrong"}) 
+      res.status(404).json({message: "comment not found"}) 
     }
   }
   export {getComment, postComments, getComments,deletComment,getCommentsByBlog}

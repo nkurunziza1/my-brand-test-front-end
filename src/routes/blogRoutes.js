@@ -13,13 +13,14 @@
   
   blogRouter.get("/", getBlogs)
   
-  blogRouter.post("/" ,passport.authenticate('jwt', {session: false}),uploadImage.single('image'), postBlog)
+  blogRouter.post("/" ,uploadImage.single('image'), postBlog)
   blogRouter.get("/:id", getSingleBlog)
   blogRouter.post("/:id/likes", updateBlogLikes)
   blogRouter.post("/:id/comments",validate(CommentValidation), postComments)
   blogRouter.get("/:id/comments", getCommentsByBlog)
-  blogRouter.patch("/:id",passport.authenticate('jwt', {session: false}), updateBlog)
-  blogRouter.delete("/:id",passport.authenticate('jwt', {session: false}),  deleteSingleBlog)
+  blogRouter.patch("/:id",updateBlog)
+  blogRouter.delete("/:id",  deleteSingleBlog)
 
+  // passport.authenticate('jwt', {session: false})
    
   export default blogRouter;
