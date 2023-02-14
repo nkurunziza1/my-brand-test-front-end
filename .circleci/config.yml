@@ -1,9 +1,13 @@
 jobs:
-  build-and-test:
+  build:
     docker:
-      - image: cimg/node:v18.13.0
+      - image: node:18.13.0
+  
     steps:
-      - checkout
+      - checkout:
+      - run:
+          name: Install dependencies
+          command: npm install
       - run:
           name: Run tests
-          command: npm test
+          command: npm test --coverage
