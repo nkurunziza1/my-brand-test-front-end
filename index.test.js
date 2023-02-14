@@ -98,6 +98,36 @@ describe('Get a single blog', () => {
 
 
 
+describe('updateBlog', () => {
+
+  it('should update a blog successfully', async () => {
+    const response = await request(app)
+      .patch("/api/v1/blogs/63e04959e7c600877ee2163a")
+      .send({ 
+        title: 'updated  Blog title',
+        content: 'updated blog content' ,
+        summary: 'updated blog summary'
+      })
+      .expect(200);
+
+    expect(response.body.title).toBe('updated  Blog title')
+    expect(response.body.content).toBe('updated blog content')
+    expect(response.body.summary).toBe('updated blog summary')
+  });
+
+  it('should return 404 if blog is not found', async () => {
+    const response = await request(app)
+      .patch("/api/v1/blogs/12323")
+      .send({ title: 'Updated Test Blog' })
+      .expect(404)
+
+    expect(response.body.message).toBe('Blog not found!');
+  });
+});
+
+
+
+
 
 
 

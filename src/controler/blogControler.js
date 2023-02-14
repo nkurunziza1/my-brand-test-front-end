@@ -58,20 +58,6 @@
     }
     };
   
-    // const updateBlogLikes = async (req, res)=>{
-    //   const blogLike = await Blog.findById({_id: req.params.id})
-    //   // if(blogLike){
-
-    //   blogLike.likes +1
-
-    //   await blogLike.save()
-
-    //   res.json({likes: blogLike.likes})
-      
-    //   // }else{/
-    //     // res.status(404).json("blog not found")
-    //   // }
-    // }
     const updateBlog = async (req, res) => {
     try {
     const blog = await Blog.findOne({ _id: req.params.id });
