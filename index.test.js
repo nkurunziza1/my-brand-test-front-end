@@ -3,7 +3,7 @@
     
    
    import app from "./src/index.js"
-   import { set } from "mongoose"
+   import { get, set } from "mongoose"
    import  request  from "supertest"
 
 
@@ -50,7 +50,7 @@ describe('GET /blogs', () => {
 describe("delete blog", () =>{
   test('it should delete a blog', async () => {
     const res = await request(app)
-    .delete('/api/v1/blogs/63e6d19a8aa2a19e7e05b3d7')
+    .delete('/api/v1/blogs/63e24cd85dca1cf8ab461df3')
     
     .expect(200)
     expect(res.body).toEqual({message: 'Blog deleted'});
@@ -141,7 +141,7 @@ describe("Comment controller", () => {
 
   test("it should delete a comment", async () => {
     const response = await request(app)
-    .delete("/api/v1/comments/63e443027360766ece6e16a5")
+    .delete("/api/v1/comments/63eb1bf9470301f2c29503f2")
     .expect(200)
     expect(response.body).toBeDefined()
     expect(response.body.message).toBe("delete Successfully");
@@ -164,29 +164,35 @@ describe('GET /messages', () => {
  
  })
  
-  describe("Post/messages",()=>{
-   test(' it should return 200 if name, email, and message', async () => {
-     const res = await request(app)
-     .post('/api/v1/messages')
-     //.set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFsZXhlbmRyZS5Oa3VydW56aXphQGdtYWlsLmNvbSIsImlkIjoiNjNkZjFmMTkxZjNlYTAzZDkxYjQwNzE4IiwiaWF0IjoxNjc2MTA1NjQxLCJleHAiOjE2NzYxMjAwNDF9.iqx5UpEEoSMRym695TTchWV27gLVrhcoTiR0cOovZ84')
-     .send({
-         name: "Alexandre",
-			email: "Alexandre@gmail.com",
-			message: "hello the one"
-     })
-     .expect(200)
-   })
- })
  
- describe("delete message", () =>{
+ 
+ describe("delete message",() =>{
    test('it should delete a message', async () => {
      const res = await request(app)
-     .delete('/api/v1/messages/63e054505b30ce4aab6077b1')
+     .delete('/api/v1/messages/63e9924a418bba266374f0b9')
      
      .expect(200)
      expect(res.body).toEqual({message: 'Delete Successful!'});
  
     })
+
+    describe("Post/messages",()=>{
+      test(' it should return 200 if name, email, and message', async () => {
+        const res = await request(app)
+        .post('/api/v1/messages')
+        //.set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFsZXhlbmRyZS5Oa3VydW56aXphQGdtYWlsLmNvbSIsImlkIjoiNjNkZjFmMTkxZjNlYTAzZDkxYjQwNzE4IiwiaWF0IjoxNjc2MTA1NjQxLCJleHAiOjE2NzYxMjAwNDF9.iqx5UpEEoSMRym695TTchWV27gLVrhcoTiR0cOovZ84')
+        .send({
+         name: "Alexandre",
+         email: "Alexandre@gmail.com",
+         message: "hello the one"
+        })
+        .expect(200)
+      })
+    })
+    
+
+
+
      
    test('it should return a 404 status code if the message is not found', async () => {
      const res = await request(app)
