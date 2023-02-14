@@ -48,14 +48,14 @@ describe('GET /blogs', () => {
 })
 
 describe("delete blog", () =>{
-  // test('it should delete a blog', async () => {
-  //   const res = await request(app)
-  //   .delete('/api/v1/blogs/63e24cd85dca1cf8ab461df3')
+  test('it should delete a blog', async () => {
+    const res = await request(app)
+    .delete('/api/v1/blogs/63e2bdd8ca9b00a8c1b57e63')
     
-  //   .expect(200)
-  //   expect(res.body).toEqual({message: 'Blog deleted'});
+    .expect(200)
+    expect(res.body).toEqual({message: 'Blog deleted'});
 
-  //  })
+   })
     
   test('it should return a 404 status code if the blog is not found', async () => {
     const res = await request(app)
@@ -139,13 +139,13 @@ describe("Comment controller", () => {
     expect(response.body).toBeDefined();
   })
 
-  // test("it should delete a comment", async () => {
-  //   const response = await request(app)
-  //   .delete("/api/v1/comments/63eb1bf9470301f2c29503f2")
-  //   .expect(200)
-  //   expect(response.body).toBeDefined()
-  //   expect(response.body.message).toBe("delete Successfully");
-  // })
+  test("it should delete a comment", async () => {
+    const response = await request(app)
+    .delete("/api/v1/comments/63eb40dc8aaf10b8bae9e67e")
+    .expect(200)
+    expect(response.body).toBeDefined()
+    expect(response.body.message).toBe("delete Successfully");
+  })
 })
 
 // message
@@ -167,14 +167,14 @@ describe('GET /messages', () => {
  
  
  describe("delete message",() =>{
-  //  test('it should delete a message', async () => {
-  //    const res = await request(app)
-  //    .delete('/api/v1/messages/63e9924a418bba266374f0b9')
+   test('it should delete a message', async () => {
+     const res = await request(app)
+     .delete('/api/v1/messages/63e99ba78a4d1dfcf056a404')
      
-  //    .expect(200)
-  //    expect(res.body).toEqual({message: 'Delete Successful!'});
+     .expect(200)
+     expect(res.body).toEqual({message: 'Delete Successful!'});
  
-  //   })
+    })
 
     describe("Post/messages",()=>{
       test(' it should return 200 if name, email, and message', async () => {
@@ -228,10 +228,10 @@ describe('GET /messages', () => {
  // users
 
 
- describe("POST /signup", () => {
+ describe("POST /users", () => {
    test("it should create a new user", async () => {
      const res = await request(app)
-       .post("/api/v1/signup")
+       .post("/api/v1/users")
        .send({
          name: "John Doe",
          email: "johndoe@example.com",
