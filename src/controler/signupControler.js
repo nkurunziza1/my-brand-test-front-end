@@ -11,9 +11,9 @@ const postSignupValues = async (req, res) => {
   
     if (checkUser.email === req.body.email) {
       if (checkUser.password === req.body.password) {
-        return res.status(400).json({ error: "You already have an account. Please login!" });
+        return res.status(401).json({ message: "You already have an account. Please login!" });
     } 
-        return res.status(400).json({ error: "Email already taken. Please use another email." }) 
+       return res.status(409).json({ message: "Email already taken. Please use another email." }); 
     }
   
 
@@ -37,7 +37,7 @@ const getSignupValue = async (req, res) => {
     if (signupValue){
       res.json(signupValue);
     } else {
-      res.status(200).json({message:"User doesn't exist"});
+      res.status(200);
     }
   } catch {
     res.status(404).json({message:"User does not exist"});

@@ -11,6 +11,7 @@
    import passport from "passport";
    import { ExtractJwt, Strategy } from "passport-jwt"
    import { signupSchema } from "./models/signup.js";
+   import swaggerDocs from '../swagger.js'
 
 //    import likeRouter from "./routes/likeRouter.js";
    const app = express();
@@ -49,10 +50,11 @@
 		app.use("/api/v1/auth/login", loginRouter)
 		// app.use("/api/likes", likeRouter)
 		// app.use("/api/likes", likeRouter)
-
-		app.listen(5000, () =>{
+      const port = 5000
+		app.listen(port, () =>{
 			 console.log("Server has started!");
 		});
+		swaggerDocs(app, port)
 	})
 	
 	export default app

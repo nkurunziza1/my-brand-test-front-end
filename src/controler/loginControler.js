@@ -13,12 +13,12 @@
             const token = jwt.sign( {email:userLogin.email, id:userLogin.id,} , secretKey, { expiresIn: '4h' });
             res.status(200).send({ token });
         }else{
-         res.status(409).json({error:"invalid password or email"})
+         res.status(409).json({message:"invalid password or email"})
         }
         
         }
         catch{
-         res.status(404).json({error:"invalid password or username"})
+         res.status(404).json({message:"invalid password or username"})
         }
             
         }
