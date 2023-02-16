@@ -12,13 +12,14 @@
    import { ExtractJwt, Strategy } from "passport-jwt"
    import { signupSchema } from "./models/signup.js";
    import swaggerDocs from '../swagger.js'
+   import cors from "cors"
 
 //    import likeRouter from "./routes/likeRouter.js";
    const app = express();
    set('strictQuery', true)
 	.connect("mongodb+srv://nkurunziza1:DPW3F9J24i7kfTuP@cluster0.9ithra2.mongodb.net/blogs?retryWrites=true&w=majority", { useNewUrlParser: true })
 	.then(() => {
-		
+		app.use(cors({}))
 		app.use(bodyParser.json({
 			limit:"50mb"
 		}));
@@ -42,12 +43,13 @@
 			  }
 			});
 		  }));
-
+        
 		app.use("/api/v1/blogs", blogRouter);
 	    app.use("/api/v1/messages", messageRouter);
         app.use("/api/v1/users", signupRouter)
 		app.use("/api/v1/comments", commentRouter)
 		app.use("/api/v1/auth/login", loginRouter)
+
 		// app.use("/api/likes", likeRouter)
 		// app.use("/api/likes", likeRouter)
       const port = 5000
