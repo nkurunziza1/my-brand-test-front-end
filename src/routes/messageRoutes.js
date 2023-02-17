@@ -158,7 +158,9 @@
  *       404:
  *         description: Not Found
  */
-   messageRouter.delete("/:id",passport.authenticate('jwt', {session: false}), deleteMessage)
+   messageRouter.delete("/:id", deleteMessage)
+
+  //  passport.authenticate('jwt', {session: false}),
    
    // ,passport.authenticate('jwt', {session: false})
 
