@@ -89,7 +89,7 @@
  *      409:
  *        description: Email already taken. Please use another email."    
  */
-  signupRouter.post("",validate(SignupValidation), postSignupValues)
+  signupRouter.post("/",validate(SignupValidation), postSignupValues)
 
 
 
