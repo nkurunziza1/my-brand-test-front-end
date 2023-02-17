@@ -1,19 +1,43 @@
 
   
   import { Blog } from '../models/Blog.js' // new
+  import { commentSchema } from '../models/comment.js'
   
- 
 
   const getBlogs = async (req, res)=>{
-  const blogs = await Blog.find()
-  
-  res.status(200).json({blog:blogs})
-  
+
+  const blogs = Blog.aggregate([
+  {
+    $lookup: {
+      from: commentSchema.collection.name,
+      localField: '_id',
+      foreignField: 'blog',
+      as: 'comments'
+    }
+  },
+  {
+    $project: {
+      title: '$title',
+      content: '$content',
+      likes: "$likes",
+      summary: '$summary',
+      image: '$image',
+      commentCount: { $size: '$comments' }
+    }
   }
+]).exec((err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).json({blog: result});
+    }
+  });
+}
 
   const postBlog = async (req, res) => {
     try {
-    if (!req.body.title || !req.body.content || !req.body.summary) {
+    if (!req.body.title || !req.body.content || !req.body.summary){
     res.status(400).json({ message: "Please provide all required details" });
     } else if (!req.file) {
     res.status(400).json({ message: "Please provide an image" });

@@ -4,7 +4,7 @@
   const schema = Schema({
 	name: String,
 	email: String,
-    message:String  
+  message:String  
   })
 
   

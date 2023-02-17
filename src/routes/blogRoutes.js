@@ -90,12 +90,12 @@
  *        
  */
 
-  blogRouter.post("/" ,uploadImage.single('image'), postBlog)
+  blogRouter.post("/",passport.authenticate('jwt', {session: false}),uploadImage.single('image'), postBlog)
 
  /**
  * @swagger
- * /api/v1/blogs/:id:
- *   patch:
+ * /api/v1/blogs/{id}:
+ *   put:
  *     tags:
  *       - blogs
  *     summary: Update blog by id
@@ -119,6 +119,9 @@
  *             content:
  *               type: string
  *               description: The updated content of the blog.
+ *             summary: 
+ *               type: string
+ *               description: the updated blog summary
  *             image:
  *               type: file
  *               description: The updated image of the blog.
@@ -148,11 +151,11 @@
  *       404:
  *         description: Not Found
  */
-  blogRouter.patch("/:id",updateBlog)
+  blogRouter.put("/:id",passport.authenticate('jwt', {session: false}),updateBlog)
 
 /**
  * @swagger
- * '/api/v1/blogs/:id':
+ * '/api/v1/blogs/{id}':
  *  delete:
  *     tags:
  *     - blogs
@@ -170,11 +173,11 @@
  */
 
 
-  blogRouter.delete("/:id",  deleteSingleBlog)
+  blogRouter.delete("/:id",passport.authenticate('jwt', {session: false}),  deleteSingleBlog)
 
   /**
  * @swagger
- * /api/v1/blogs/:id:
+ * /api/v1/blogs/{id}:
  *   get:
  *     tags:
  *       - blogs
@@ -366,6 +369,6 @@
   blogRouter.get("/:id/comments", getCommentsByBlog)
   
 
-  // passport.authenticate('jwt', {session: false})
+   
    
   export default blogRouter;

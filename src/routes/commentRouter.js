@@ -5,7 +5,7 @@
   import { getComment, getComments, postComments, deletComment ,getCommentsByBlog} from "../controler/commentControler.js"
   import validate from "../validationMiddleware/validate.js"
   import CommentValidation from "../validation/commentValidation.js"
-  
+  import passport from "passport"
 
   
   /**
@@ -211,7 +211,7 @@
  *                   description: An error message.
  */
 
-  commentRouter.delete("/:id", deletComment)
+  commentRouter.delete("/:id",passport.authenticate('jwt', {session: false}), deletComment)
 
 
   export default commentRouter; 
