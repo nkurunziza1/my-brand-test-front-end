@@ -8,7 +8,13 @@
    summary: String,
 	content:	String,
    image: String,
-   likes:{type:Number, default:0}
+   likes:{type:Number, default:0},
+   date: {
+      type: Date,
+      default: Date.now
+    }
+   
+   
 
    })
 

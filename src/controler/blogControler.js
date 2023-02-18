@@ -47,6 +47,11 @@
     content: req.body.content,
     summary: req.body.summary,
     image: req.file.path,
+
+    date: {
+      type: Date,
+      default: Date.now
+    }
    });
 
    await blog.save();

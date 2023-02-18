@@ -90,7 +90,7 @@
  *        
  */
 
-  blogRouter.post("/",passport.authenticate('jwt', {session: false}),uploadImage.single('image'), postBlog)
+  blogRouter.post("/",uploadImage.single('image'), postBlog)
 
  /**
  * @swagger
