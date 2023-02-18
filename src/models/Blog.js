@@ -9,13 +9,6 @@
 	content:	String,
    image: String,
    likes:{type:Number, default:0},
-   date: {
-      type: Date,
-      default: Date.now
-    }
-   
-   
-
    })
 
    export const Blog = model("Blog", schema)
