@@ -47,7 +47,6 @@
     content: req.body.content,
     summary: req.body.summary,
     image: req.file.path,
-
     
    });
 
