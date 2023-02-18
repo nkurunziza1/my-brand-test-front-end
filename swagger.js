@@ -23,6 +23,9 @@ const options = {
       servers:[
         {
          url:'http://localhost:5000/'   
+        },
+        {
+          url: 'https://alexandre-nkurunziza.onrender.com/'
         }
       ]
   },
