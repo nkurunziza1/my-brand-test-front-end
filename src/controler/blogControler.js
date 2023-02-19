@@ -22,6 +22,7 @@
       likes: "$likes",
       summary: '$summary',
       image: '$image',
+      createAt: '$createAt',
       commentCount: { $size: '$comments' }
     }
   }
