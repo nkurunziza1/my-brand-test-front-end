@@ -22,7 +22,7 @@
       likes: "$likes",
       summary: '$summary',
       image: '$image',
-      createdAt: '$createAt',
+      createdAt: '$createdAt',
       commentCount: { $size: '$comments' }
     }
   }
@@ -48,7 +48,10 @@
     content: req.body.content,
     summary: req.body.summary,
     image: req.file.path,
-    
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now
+    //  }
     
    });
 
