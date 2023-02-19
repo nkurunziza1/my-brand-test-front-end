@@ -22,7 +22,7 @@
       likes: "$likes",
       summary: '$summary',
       image: '$image',
-      createAt: '$createAt',
+      createdAt: '$createAt',
       commentCount: { $size: '$comments' }
     }
   }
@@ -48,6 +48,7 @@
     content: req.body.content,
     summary: req.body.summary,
     image: req.file.path,
+    
     
    });
 
